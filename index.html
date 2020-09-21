@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tanks</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="base.css" type="text/css">
+</head>
+<body>
+    <div id="container">
+        <canvas id="game" width="800" height="600">
+            You browser dose not support canvas
+        </canvas>
+    </div>
+<script type="module">
+    import Game from './game.js'
+    $(document).ready(function () {
+        const canvas = document.getElementById("game");
+        const context = canvas.getContext('2d');
+
+        const game = new Game(context, canvas.width, canvas.height);
+        game.draw();
+    })
+</script>
+</body>
+</html>
