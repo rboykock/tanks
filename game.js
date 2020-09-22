@@ -4,7 +4,16 @@ export default function Game(ctx, width, height) {
     this.height = height;
 }
 
-Game.prototype.draw = function () {
+Game.prototype.update = function () {
     this.ctx.fillStyle = 'green'
     this.ctx.fillRect(0,0,this.width, this.height)
+
+    console.log("step")
+
+    requestAnimationFrame(() => this.update())
+}
+
+Game.prototype.run = function () {
+
+    requestAnimationFrame(() => this.update())
 }
