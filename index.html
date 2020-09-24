@@ -13,13 +13,16 @@
         </canvas>
     </div>
 <script type="module">
-    import Game from './game.js'
+    import Game from './js/game.js'
     $(document).ready(function () {
         const canvas = document.getElementById("game");
         const context = canvas.getContext('2d');
 
         const game = new Game(context, canvas.width, canvas.height);
         game.run();
+
+        $(document).keydown((event) => game.handleKey(event));
+        $("#game").mousemove((event) => game.handleMouse(event));
     })
 </script>
 </body>
